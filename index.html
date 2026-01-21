@@ -23,32 +23,32 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
+            padding: 20px 0;
         }
 
         .container {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             backdrop-filter: blur(10px);
             background: var(--card-bg);
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
-            animation: fadeIn 1.5s ease-out;
+            animation: fadeIn 1.2s ease-out;
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .role {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--secondary-color);
@@ -56,16 +56,42 @@
             font-weight: bold;
         }
 
-        p {
+        .bio {
             line-height: 1.6;
-            color: #d1d1d1;
+            color: #e0e0e0;
             margin-bottom: 2rem;
+            text-align: justify;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .contact-info {
+            margin: 2rem 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #d1d1d1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--secondary-color);
         }
 
         .skills {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 2rem;
         }
 
@@ -77,17 +103,30 @@
             border: 1px solid var(--primary-color);
         }
 
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: 0.3s;
+        /* Botão flutuante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
+            transition: 0.3s;
         }
 
-        .social-links a:hover {
-            color: var(--secondary-color);
-            transform: translateY(-5px);
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
         }
 
         @keyframes fadeIn {
@@ -102,20 +141,33 @@
         <h1>Johnny Alperes</h1>
         <div class="role">QA Tester</div>
         
-        <p>Garantindo a qualidade e a melhor experiência do usuário através de testes precisos e automação eficiente.</p>
+        <div class="bio">
+            Olá! Sou analista de qualidade (QA) com foco em garantir a excelência de softwares. 
+            <strong>Atualmente, faço parte do time da Energisa (desde 2024)</strong>, onde aplico metodologias de teste para assegurar sistemas robustos e eficientes.
+        </div>
 
         <div class="skills">
             <span class="skill-tag">Manual Testing</span>
             <span class="skill-tag">Automation</span>
             <span class="skill-tag">API Testing</span>
+            <span class="skill-tag">Energisa Team</span>
         </div>
 
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:seuemail@exemplo.com"><i class="fas fa-envelope"></i></a>
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+
+        <div class="contact-info">
+            <a href="tel:83998691921" class="contact-item">
+                <i class="fas fa-phone"></i> (83) 99869-1921
+            </a>
+            <a href="mailto:Johnnypereiradacostajr@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i> Johnnypereiradacostajr@gmail.com
+            </a>
         </div>
     </div>
+
+    <a href="https://wa.me/5583998691921" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
