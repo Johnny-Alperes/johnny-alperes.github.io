@@ -5,350 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alperes Coleta de Descarte Eletrônico</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
         :root {
-            --primary-color: #007bff; /* Azul vibrante */
-            --secondary-color: #28a745; /* Verde para sucesso/ação */
-            --dark-bg: #212529; /* Fundo escuro para seções */
-            --light-bg: #f8f9fa; /* Fundo claro para seções */
-            --text-color-dark: #343a40;
-            --text-color-light: #ffffff;
-            --gray-text: #6c757d;
+            --primary-color: #007bff; 
+            --accent-green: #2ecc71; 
+            --dark-bg: #1a1a1a;
+            --text-light: #ffffff;
+            --text-dark: #333333;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: var(--light-bg);
-            color: var(--text-color-dark);
             line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f4f4f4;
         }
 
+        /* Header */
         header {
-            background-color: var(--dark-bg);
-            color: var(--text-color-light);
-            padding: 1rem 0;
+            background: var(--dark-bg);
+            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-bottom: 4px solid var(--accent-green);
         }
 
         header h1 {
+            color: var(--text-light);
             margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.1rem;
-            color: var(--gray-text);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        section:nth-of-type(even) {
-            background-color: var(--dark-bg);
-            color: var(--text-color-light);
-        }
-
-        section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        section:nth-of-type(even) h2 {
-            color: var(--secondary-color);
-        }
-
-        .section-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: var(--text-color-dark);
-        }
-        section:nth-of-type(even) .section-content {
-            color: #ccc;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--text-color-light);
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #218838;
-        }
-
-        /* Swiper Carrossel */
-        .swiper-container {
-            width: 100%;
-            height: 400px; /* Altura do carrossel */
-            margin-bottom: 40px;
-        }
-
-        .swiper-slide {
+        /* Seção de Destaque (Hero) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
+            height: 500px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
             color: white;
-            font-size: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .swiper-slide::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+            padding: 0 20px;
         }
 
-        .swiper-slide-content {
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* BOTÃO GRANDE E VERDE */
+        .btn-agendar {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-agendar:hover {
+            transform: scale(1.05);
+            background-color: #27ae60;
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+        }
+
+        /* Conteúdo */
+        .content-section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .importance-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: -50px; /* Sobrepõe levemente a hero */
             position: relative;
             z-index: 10;
-            padding: 20px;
+        }
+
+        h3 { color: var(--accent-green); font-size: 1.8rem; }
+
+        .contact-footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
         }
-        .swiper-slide-content h3 {
-            margin-top: 0;
-            font-size: 2.5rem;
-        }
-        .swiper-slide-content p {
-            font-size: 1.2rem;
-        }
 
-
-        .swiper-button-next, .swiper-button-prev {
-            color: white !important;
-        }
-        .swiper-pagination-bullet-active {
-            background: white !important;
-        }
-
-        /* Seção Contato */
-        #contato {
-            background-color: var(--primary-color);
-            color: var(--text-color-light);
-            padding: 60px 0;
-        }
-
-        #contato h2 {
-            color: var(--text-color-light);
-        }
-
-        #contato .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: var(--text-color-light);
+        .contact-footer a {
+            color: var(--accent-green);
             text-decoration: none;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            transition: 0.3s;
+            font-weight: bold;
         }
 
-        #contato .contact-item:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-bg);
-            color: var(--gray-text);
-            text-align: center;
-            padding: 2rem 0;
-            font-size: 0.9rem;
-        }
-
+        /* Botão WhatsApp Flutuante */
         .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
+            color: white;
             width: 60px;
             height: 60px;
+            border-radius: 50%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            text-decoration: none;
-            transition: 0.3s;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #128c7e;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            header p {
-                font-size: 1rem;
-            }
-            section h2 {
-                font-size: 1.8rem;
-            }
-            .section-content {
-                font-size: 1rem;
-            }
-            .swiper-container {
-                height: 300px;
-            }
-            .swiper-slide-content h3 {
-                font-size: 1.8rem;
-            }
-            .swiper-slide-content p {
-                font-size: 1rem;
-            }
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 25px;
-                bottom: 15px;
-                right: 15px;
-            }
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 1.8rem; }
+            .btn-agendar { font-size: 1.2rem; padding: 15px 30px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>Alperes Coleta de Descarte Eletrônico</h1>
-            <p>Seu parceiro para um futuro mais sustentável</p>
-        </div>
+        <h1>Alperes Coleta</h1>
     </header>
 
-    <section class="no-padding">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image: url('https://via.placeholder.com/1200x400/007bff/ffffff?text=Coleta+de+Lixo+Eletrônico');">
-                    <div class="swiper-slide-content">
-                        <h3>Dê um novo destino ao seu eletrônico</h3>
-                        <p>Proteja o meio ambiente com a gente!</p>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('https://via.placeholder.com/1200x400/28a745/ffffff?text=Recicle+Seu+Descarte');">
-                    <div class="swiper-slide-content">
-                        <h3>Recicle seu descarte eletrônico</h3>
-                        <p>Evite a contaminação do solo e da água.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('https://via.placeholder.com/1200x400/6c757d/ffffff?text=Impacto+Positivo');">
-                    <div class="swiper-slide-content">
-                        <h3>Pequenas ações, grande impacto</h3>
-                        <p>Sua doação faz a diferença!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
+    <section class="hero">
+        <h2>Seu lixo eletrônico tem valor!</h2>
+        <p>Não descarte no lixo comum. Nós ajudamos você a dar o destino correto aos seus aparelhos antigos.</p>
+        
+        <a href="https://wa.me/5583998691921?text=Olá! Gostaria de agendar uma coleta de descarte eletrônico." 
+           class="btn-agendar">
+           <i class="fab fa-whatsapp"></i> AGENDAR UMA COLETA
+        </a>
     </section>
 
-    <section id="sobre">
-        <div class="container">
-            <h2>Sobre a Alperes Coleta</h2>
-            <p class="section-content">
-                Na Alperes Coleta de Descarte Eletrônico, somos dedicados a promover a sustentabilidade e a gestão responsável de resíduos eletrônicos. Acreditamos que cada dispositivo descartado corretamente contribui para um planeta mais limpo e saudável. Nossa missão é facilitar o processo de descarte e reutilização, oferecendo um serviço eficiente e consciente para indivíduos e empresas.
+    <div class="content-section">
+        <div class="importance-box">
+            <h3>Por que doar seu eletrônico?</h3>
+            <p>
+                O descarte incorreto de eletrônicos polui o solo e a água com metais pesados. 
+                Ao doar para a <strong>Alperes Coleta</strong>, você garante que esses materiais 
+                serão reciclados ou reutilizados, protegendo o meio ambiente e incentivando a economia circular.
             </p>
         </div>
+    </div>
+
+    <section class="content-section">
+        <h3>O que coletamos?</h3>
+        <p>Computadores, Celulares, Tablets, Impressoras, Cabos, Monitores e muito mais!</p>
+        <p><strong>Incentive a sustentabilidade: Doe hoje mesmo!</strong></p>
     </section>
 
-    <section id="importancia">
-        <div class="container">
-            <h2>Por que descartar corretamente?</h2>
-            <p class="section-content">
-                O descarte inadequado de eletrônicos libera substâncias tóxicas como chumbo, mercúrio e cádmio no meio ambiente, contaminando o solo e a água. Além disso, muitos componentes podem ser reciclados e reutilizados, reduzindo a necessidade de extrair novos recursos naturais. Ao descartar corretamente, você protege a natureza e contribui para a economia circular.
-            </p>
-        </div>
-    </section>
-
-    <section id="como-doar">
-        <div class="container">
-            <h2>Como Doar Seus Eletrônicos</h2>
-            <p class="section-content">
-                É simples e rápido! Entre em contato conosco pelo WhatsApp ou e-mail para agendarmos a coleta. Aceitamos computadores, notebooks, celulares, tablets, impressoras e diversos outros dispositivos eletrônicos que não servem mais para você. Sua doação pode transformar vidas e contribuir para a inclusão digital através da reutilização.
-            </p>
-            <a href="https://wa.me/5583998691921" target="_blank" class="btn">Fale Conosco no WhatsApp</a>
-        </div>
-    </section>
-
-    <section id="contato">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <p class="section-content" style="color: white;">
-                Quer saber mais sobre nossos serviços ou agendar uma coleta? Fale conosco!
-            </p>
-            <a href="tel:83998691921" class="contact-item">
-                <i class="fas fa-phone"></i> (83) 99869-1921
-            </a>
-            <a href="mailto:Johnnypereiradacostajr@gmail.com" class="contact-item">
-                <i class="fas fa-envelope"></i> Johnnypereiradacostajr@gmail.com
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Alperes Coleta de Descarte Eletrônico. Todos os direitos reservados.</p>
-        </div>
+    <footer class="contact-footer">
+        <p><strong>Johnny Alperes - Alperes Coleta de Descarte Eletrônico</strong></p>
+        <p>E-mail: <a href="mailto:Johnnypereiradacostajr@gmail.com">Johnnypereiradacostajr@gmail.com</a></p>
+        <p>Telefone/WhatsApp: (83) 99869-1921</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+        <p style="font-size: 0.8rem; color: #777;">&copy; 2024 João Pessoa - PB. Sustentabilidade em primeiro lugar.</p>
     </footer>
 
     <a href="https://wa.me/5583998691921" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
 
 </body>
 </html>
